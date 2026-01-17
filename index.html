@@ -1,0 +1,3518 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <title>Aurvenza – The Art of Luxury</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
+
+  <style>
+
+    :root {
+
+      /* Base colors – warm, minimal, luxury vibe */
+
+      --bg: #f5ede3;            /* main background (beige) */
+
+      --bg-soft: #f9f2ea;       /* softer section background */
+
+      --bg-source-taupe: #fefcf9; /* very light off-white/taupe for source section */
+
+      --card: #ffffff;
+
+      --accent: #0f5c74;        /* deep water blue (used sparingly) */
+
+      --gold-accent: #b9925b;   /* soft metallic gold/bronze for highlights */
+
+      --accent-gradient: linear-gradient(135deg, #0f5c74, #36a4c6);
+
+      --gold-gradient: linear-gradient(135deg, #b9925b, #e0c18d);
+
+      --border-subtle: rgba(15, 92, 116, 0.09);
+
+
+
+      --text: #222222;          /* main text (dark, good contrast) */
+
+      --muted: #7c7c7c;         /* softer text */
+
+      --muted-soft: #a6a6a6;
+
+
+
+      --radius-lg: 20px;
+
+      --radius-md: 14px;
+
+      --shadow-soft: 0 18px 40px rgba(15, 92, 116, 0.08);
+
+      --shadow-card: 0 14px 30px rgba(0, 0, 0, 0.06);
+
+
+
+      --transition-fast: 0.16s ease-out;
+
+      --transition-med: 0.28s ease;
+
+
+
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+
+        sans-serif;
+
+      --font-logo: "Times New Roman", "Georgia", serif;
+
+    }
+
+
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+
+    body {
+
+      font-family: var(--font-main);
+
+      /* Original Beige Background for the rest of the site */
+
+      background: radial-gradient(circle at top, #fdf6ee 0, var(--bg) 42%, #f2e3d2 80%);
+
+      color: var(--text);
+
+      -webkit-font-smoothing: antialiased;
+
+      min-height: 100vh;
+
+      position: relative;
+
+      overflow-x: hidden;
+
+    }
+
+
+
+    img {
+
+      max-width: 100%;
+
+      display: block;
+
+    }
+
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+
+    button {
+
+      font-family: inherit;
+
+    }
+
+
+
+    .container {
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      padding: 0 1.4rem;
+
+    }
+
+
+
+    /* ---------------- NAVBAR ---------------- */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 50;
+
+      backdrop-filter: blur(18px);
+
+      background: rgba(245, 237, 227, 0.92);
+
+      border-bottom: 1px solid rgba(15, 92, 116, 0.05);
+
+      transition: background 0.3s ease;
+
+    }
+
+
+
+    .nav {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 0.9rem 0;
+
+      gap: 1rem;
+
+    }
+
+
+
+    .nav-left {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.9rem;
+
+    }
+
+
+
+    .logo-text {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0.1rem;
+
+    }
+
+
+
+    .logo-text-main {
+
+      font-family: var(--font-logo);
+
+      font-size: 1.35rem;
+
+      letter-spacing: 0.4em;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .logo-text-sub {
+
+      font-size: 0.78rem;
+
+      color: var(--muted-soft);
+
+    }
+
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 1.4rem;
+
+      font-size: 0.9rem;
+
+    }
+
+
+
+    .nav-links a {
+
+      position: relative;
+
+      color: var(--muted);
+
+      padding-bottom: 0.1rem;
+
+      transition: color var(--transition-fast), transform var(--transition-fast);
+
+    }
+
+
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -0.14rem;
+
+      width: 0;
+
+      height: 2px;
+
+      border-radius: 999px;
+
+      background: var(--gold-gradient);
+
+      transition: width var(--transition-fast);
+
+    }
+
+
+
+    .nav-links a:hover {
+
+      color: var(--text);
+
+      transform: translateY(-1px);
+
+    }
+
+
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+
+    .cart-button {
+
+      position: relative;
+
+      border: none;
+
+      border-radius: 999px;
+
+      padding: 0.45rem 0.85rem;
+
+      background: #ffffff;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+      cursor: pointer;
+
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+      border: 1px solid rgba(15, 92, 116, 0.12);
+
+      font-size: 0.82rem;
+
+      color: var(--text);
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+
+        border-color var(--transition-fast), background var(--transition-fast);
+
+    }
+
+
+
+    .cart-button:hover {
+
+      transform: translateY(-2px) translateX(1px);
+
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
+
+      border-color: rgba(15, 92, 116, 0.25);
+
+      background: #fdfaf7;
+
+    }
+
+
+
+    .cart-dot {
+
+      width: 8px;
+
+      height: 8px;
+
+      border-radius: 999px;
+
+      background: var(--gold-accent);
+
+      animation: pulseSoft 2.2s ease-in-out infinite;
+
+    }
+
+
+
+    .cart-count {
+
+      min-width: 18px;
+
+      height: 18px;
+
+      border-radius: 999px;
+
+      background: var(--gold-accent);
+
+      color: #ffffff;
+
+      font-size: 0.7rem;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+
+    /* ---------------- HERO (FULL JUNGLE BG) ---------------- */
+
+    .hero {
+
+      /* Full screen height */
+
+      min-height: 120vh;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      /* Remove standard padding to let background shine */
+
+      padding: 0;
+
+      overflow: hidden;
+
+    }
+
+
+
+    /* The Fixed Background Image */
+
+    .hero-bg {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 40;
+
+      width: 100%;
+
+      height: 89%; /* Taller than screen for parallax effect */
+
+      /* THIS IS YOUR NEW IMAGE */
+
+      background-image: url('hero-jungle.png');
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-repeat: no-repeat;
+
+      z-index: -2;
+
+      will-change: transform;
+
+    }
+
+
+
+    /* Dark Overlay to make text readable over the jungle */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 100%);
+
+      z-index: 1;
+
+    }
+
+
+
+    /* Hero Content Wrapper */
+
+    .hero-container-inner {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      padding: 0 1.4rem;
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+
+      gap: 2rem;
+
+      align-items: center;
+
+    }
+
+
+
+    /* Override Text Colors for Hero to be White/Gold */
+
+    .hero .tagline {
+
+      color: rgba(255, 255, 255, 0.85);
+
+    }
+
+    .hero .hero-title {
+
+      color: #ffffff;
+
+    }
+
+    .hero .hero-sub {
+
+      color: rgba(255, 255, 255, 0.95);
+
+    }
+
+    .hero .hero-meta {
+
+      color: rgba(255, 255, 255, 0.75);
+
+    }
+
+    .hero .hero-meta-label {
+
+      color: var(--gold-accent);
+
+    }
+
+
+
+    .tagline {
+
+      font-size: 0.78rem;
+
+      letter-spacing: 0.24em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 0.6rem;
+
+    }
+
+
+
+    .hero-title {
+
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+
+      line-height: 1.1;
+
+      margin-bottom: 0.8rem;
+
+    }
+
+
+
+    .hero-title span {
+
+      background: var(--gold-gradient);
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+    }
+
+
+
+    .hero-sub {
+
+      font-size: 1.05rem;
+
+      max-width: 480px;
+
+      margin-bottom: 1.8rem;
+
+      font-weight: 300;
+
+    }
+
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.9rem;
+
+      margin-bottom: 2.2rem;
+
+    }
+
+
+
+    /* Hero Buttons */
+
+    .btn-primary,
+
+    .btn-ghost {
+
+      border-radius: 999px;
+
+      padding: 0.7rem 1.4rem;
+
+      font-size: 0.9rem;
+
+      border: 1px solid transparent;
+
+      cursor: pointer;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.45rem;
+
+      transition: all 0.3s ease;
+
+    }
+
+
+
+    .btn-primary {
+
+      background: var(--gold-gradient);
+
+      color: #ffffff;
+
+      box-shadow: 0 18px 40px rgba(185, 146, 91, 0.4);
+
+    }
+
+
+
+    .btn-primary:hover {
+
+      transform: translateY(-2px);
+
+    }
+
+
+
+    .hero .btn-ghost {
+
+      background: rgba(255, 255, 255, 0.1);
+
+      border-color: rgba(255, 255, 255, 0.3);
+
+      color: #ffffff;
+
+      backdrop-filter: blur(4px);
+
+    }
+
+
+
+    .hero .btn-ghost:hover {
+
+      background: rgba(255, 255, 255, 0.2);
+
+      border-color: #ffffff;
+
+    }
+
+
+
+    .hero-meta {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 1.5rem;
+
+      font-size: 0.82rem;
+
+    }
+
+
+
+    .hero-meta-item span {
+
+      display: block;
+
+    }
+
+
+
+    .hero-meta-label {
+
+      font-size: 0.72rem;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 0.2rem;
+
+    }
+
+
+
+    /* ---------------- REST OF SITE (ORIGINAL STYLE) ---------------- */
+
+    /* PARALLAX BOTTLE GALLERY */
+
+    .section-parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("mb.jpg"); /* make sure path is correct */
+  background-size: cover;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+
+
+    .parallax-heading {
+
+      text-align: center;
+
+      margin-bottom: 2.4rem;
+
+    }
+
+
+
+    .parallax-heading .section-eyebrow {
+
+      margin-bottom: 0.5rem;
+
+    }
+
+
+
+    .parallax-heading .section-sub {
+
+      margin: 0 auto;
+
+      max-width: 520px;
+
+    }
+
+
+
+    .parallax-stage {
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    height: 380px;
+  }
+
+
+
+
+    .parallax-base {
+
+      position: absolute;
+
+      inset: 15% 5% 0 5%;
+
+      border-radius: 999px;
+
+      background: radial-gradient(circle at 50% 0%, #ffffff, #f5ede3 60%, #f0e1d0 100%);
+
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.16);
+
+      opacity: 0.96;
+
+    }
+
+
+
+    .parallax-layer {
+
+      position: absolute;
+
+      will-change: transform;
+
+      transition: transform 0.1s linear;
+
+    }
+
+
+
+    .parallax-bottle-img {
+
+      height: 260px;
+
+      width: auto;
+
+      object-fit: contain;
+
+      filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.28));
+
+    }
+
+
+
+    .parallax-layer[data-parallax-depth="-0.05"] .parallax-bottle-img {
+
+      height: 220px;
+
+      filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.22));
+
+      opacity: 0.9;
+
+    }
+
+
+
+    .parallax-layer[data-parallax-depth="-0.2"] .parallax-bottle-img {
+
+      height: 280px;
+
+    }
+
+
+
+    /* positions */
+
+    .parallax-layer--back {
+
+      left: 7%;
+
+      bottom: 10%;
+
+    }
+
+
+
+    .parallax-layer--left {
+
+      left: 20%;
+
+      bottom: 12%;
+
+    }
+
+
+
+    .parallax-layer--center {
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      bottom: 14%;
+
+    }
+
+
+
+    .parallax-layer--right {
+  right: 18%;
+  bottom: 12%;
+}
+
+
+
+
+
+    /* SECTION LAYOUT */
+
+    section {
+
+      padding: 3.1rem 0;
+
+    }
+
+
+
+    .section-heading {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0.4rem;
+
+      margin-bottom: 2.1rem;
+
+    }
+
+
+
+    .section-eyebrow {
+
+      font-size: 0.78rem;
+
+      letter-spacing: 0.22em;
+
+      text-transform: uppercase;
+
+      color: var(--muted-soft);
+
+    }
+
+
+
+    .section-title {
+
+      font-size: 1.5rem;
+
+      letter-spacing: 0.06em;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .section-sub {
+
+      font-size: 0.92rem;
+
+      color: var(--muted);
+
+      max-width: 480px;
+
+    }
+
+
+
+    /* SOURCE SECTION */
+
+    .section-source {
+
+      padding: 4.5rem 0;
+
+      background: var(--bg-source-taupe);
+
+      border-top: 1px solid rgba(185, 146, 91, 0.1);
+
+      border-bottom: 1px solid rgba(185, 146, 91, 0.1);
+
+    }
+
+
+
+    .source-grid {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+
+      gap: 3.5rem;
+
+      align-items: center;
+
+    }
+
+
+
+    .source-list {
+
+      list-style: none;
+
+      margin: 1.5rem 0;
+
+      font-size: 0.9rem;
+
+      color: var(--muted);
+
+    }
+
+
+
+    .source-list li {
+
+      margin-bottom: 0.6rem;
+
+      padding-left: 1.3rem;
+
+      position: relative;
+
+    }
+
+
+
+    .source-list li::before {
+
+      content: '✦';
+
+      position: absolute;
+
+      left: 0;
+
+      font-size: 0.9rem;
+
+      color: var(--gold-accent);
+
+      font-weight: bold;
+
+    }
+
+
+
+    .source-image-card {
+
+      position: relative;
+
+      background: var(--card);
+
+      border-radius: var(--radius-lg);
+
+      box-shadow: 0 16px 30px rgba(185, 146, 91, 0.12);
+
+      padding: 0.9rem;
+
+      border: 1px solid rgba(185, 146, 91, 0.15);
+
+      overflow: hidden;
+
+    }
+
+
+
+    .source-image-card::before,
+
+    .source-image-card::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 110%;
+
+      height: 120px;
+
+      background: var(--gold-accent);
+
+      opacity: 0.1;
+
+      z-index: -1;
+
+      left: -5%;
+
+      border-radius: 40% 60% 70% 30% / 30% 30% 70% 70%;
+
+      animation: flowingGold 12s ease-in-out infinite alternate;
+
+    }
+
+
+
+    .source-image-card::before {
+
+      top: -15px;
+
+      transform: rotate(-5deg) scale(0.95);
+
+      opacity: 0.15;
+
+    }
+
+
+
+    .source-image-card::after {
+
+      bottom: -25px;
+
+      transform: rotate(2deg) scale(1.05);
+
+      opacity: 0.08;
+
+      animation-delay: 1.5s;
+
+    }
+
+
+
+    .source-image-inner {
+
+      border-radius: var(--radius-md);
+
+      overflow: hidden;
+
+      line-height: 0;
+
+    }
+
+
+
+    .source-img {
+
+      width: 100%;
+
+      height: 300px;
+
+      object-fit: cover;
+
+      display: block;
+
+      filter: brightness(0.98);
+
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    }
+
+
+
+    .source-image-card:hover .source-img {
+
+      transform: scale(1.04) rotate(0.1deg);
+
+    }
+
+
+
+    .image-caption {
+
+      text-align: center;
+
+      margin-top: 0.6rem;
+
+      font-size: 0.78rem;
+
+      color: var(--muted-soft);
+
+    }
+
+
+
+    @keyframes flowingGold {
+
+      0% {
+
+        border-radius: 40% 60% 70% 30% / 30% 30% 70% 70%;
+
+      }
+
+      50% {
+
+        border-radius: 60% 40% 30% 70% / 70% 60% 30% 40%;
+
+        transform: scale(1.05) rotate(1deg);
+
+      }
+
+      100% {
+
+        border-radius: 40% 60% 70% 30% / 30% 30% 70% 70%;
+
+      }
+
+    }
+
+
+
+    /* PRODUCTS */
+
+    .section-products {
+
+      background: var(--bg-soft);
+
+      border-top: 1px solid rgba(15, 92, 116, 0.05);
+
+      border-bottom: 1px solid rgba(15, 92, 116, 0.05);
+
+    }
+
+
+
+    .product-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 1.4rem;
+
+    }
+
+
+
+    .product-card {
+
+      background: var(--card);
+
+      border-radius: var(--radius-lg);
+
+      padding: 1.2rem 1.1rem 1.1rem;
+
+      box-shadow: var(--shadow-card);
+
+      border: 1px solid var(--border-subtle);
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0.65rem;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transform-origin: center;
+
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+
+        border-color var(--transition-med), background var(--transition-med);
+
+      will-change: transform, box-shadow;
+
+    }
+
+
+
+    .product-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: radial-gradient(circle at 0 0, rgba(185, 146, 91, 0.2), transparent 60%);
+
+      opacity: 0;
+
+      transition: opacity var(--transition-med);
+
+      pointer-events: none;
+
+    }
+
+
+
+    .product-card:hover {
+
+      transform: translateY(-6px);
+
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+
+      border-color: rgba(185, 146, 91, 0.3);
+
+      background: #fffefc;
+
+      animation: cardTilt 0.45s ease-out;
+
+    }
+
+
+
+    .product-card:hover::before {
+
+      opacity: 1;
+
+    }
+
+
+
+    .product-badge-row {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      font-size: 0.75rem;
+
+      color: var(--muted-soft);
+
+    }
+
+
+
+    .product-badge {
+
+      padding: 0.16rem 0.6rem;
+
+      border-radius: 999px;
+
+      background: #f7f1e9;
+
+      border: 1px solid rgba(185, 146, 91, 0.25);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.13em;
+
+      font-size: 0.7rem;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+
+    .product-badge::after {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: -40%;
+
+      width: 40%;
+
+      height: 100%;
+
+      background: linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255, 255, 255, 0.8),
+
+        transparent
+
+      );
+
+      opacity: 0;
+
+      transform: translateX(-10%);
+
+      animation: badgeShine 5.5s ease-in-out infinite;
+
+    }
+
+
+
+    .product-title {
+
+      font-size: 0.98rem;
+
+      font-weight: 650;
+      margin-top: auto;
+
+    }
+
+    .product-price-row {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      margin-top: 0.4rem;
+
+      gap: 0.7rem;
+
+    }
+
+
+
+    .product-price {
+
+      font-weight: 700;
+
+      font-size: 0.98rem;
+
+    }
+
+
+
+    .product-price span {
+
+      font-size: 0.78rem;
+
+      color: var(--muted-soft);
+
+      margin-left: 0.15rem;
+
+    }
+
+
+
+    .product-cta {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+    }
+
+
+
+    .btn-add {
+
+      border-radius: 999px;
+
+      border: none;
+
+      padding: 0.4rem 0.95rem;
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      background: var(--gold-accent);
+
+      color: #ffffff;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.25rem;
+
+      box-shadow: 0 10px 25px rgba(185, 146, 91, 0.35);
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+
+        background var(--transition-fast);
+
+    }
+
+
+
+    .btn-add:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 16px 32px rgba(185, 146, 91, 0.4);
+
+      background: #a17c4e;
+
+    }
+
+
+
+    .btn-add:active {
+
+      transform: translateY(0);
+
+      box-shadow: 0 8px 20px rgba(185, 146, 91, 0.35);
+
+    }
+
+    .pill-soft {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+
+      /* ✅ MATCHES YOUR SCREENSHOT */
+      background: rgba(201, 163, 92, 0.22);
+      color: #9a742f;
+
+    }
+
+
+
+
+    /* WHY AURVENZA */
+
+    .why-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 1.4rem;
+
+    }
+
+
+
+    .why-card {
+
+      background: #fff8f0;
+
+      border-radius: var(--radius-lg);
+
+      padding: 1.1rem 1.1rem 1rem;
+
+      border: 1px solid rgba(185, 146, 91, 0.18);
+
+      box-shadow: 0 12px 26px rgba(185, 146, 91, 0.12);
+
+      font-size: 0.86rem;
+
+      color: var(--muted);
+
+      transform-origin: center;
+
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+
+        border-color var(--transition-med), background var(--transition-med);
+
+      will-change: transform, box-shadow;
+
+    }
+
+
+
+    .why-card:hover {
+
+      transform: translateY(-4px) translateX(1px);
+
+      box-shadow: 0 18px 36px rgba(185, 146, 91, 0.2);
+
+      background: #fff3e6;
+
+    }
+
+
+
+    .why-title {
+
+      font-size: 0.96rem;
+
+      font-weight: 600;
+
+      margin-bottom: 0.35rem;
+
+      color: var(--text);
+
+    }
+
+
+
+    /* CONTACT */
+
+    .contact-grid {
+
+      display: grid;
+
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+
+      gap: 1.8rem;
+
+    }
+
+
+
+    .contact-card {
+
+      background: var(--card);
+
+      border-radius: var(--radius-lg);
+
+      border: 1px solid var(--border-subtle);
+
+      padding: 1.3rem 1.2rem;
+
+      box-shadow: var(--shadow-card);
+
+      font-size: 0.9rem;
+
+      color: var(--muted);
+
+    }
+
+
+
+    .contact-row {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 0.9rem;
+
+      margin-top: 0.9rem;
+
+    }
+
+
+
+    .contact-item span {
+
+      display: block;
+
+    }
+
+
+
+    .contact-label {
+
+      font-size: 0.76rem;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      color: var(--muted-soft);
+
+      margin-bottom: 0.15rem;
+
+    }
+
+
+
+    .contact-value {
+
+      color: var(--text);
+
+    }
+
+
+
+    .contact-note {
+
+      font-size: 0.8rem;
+
+      color: var(--muted-soft);
+
+      margin-top: 1rem;
+
+    }
+
+
+
+    .newsletter-card {
+
+      background: var(--gold-accent);
+
+      border-radius: var(--radius-lg);
+
+      padding: 1.2rem 1.2rem 1rem;
+
+      color: #fffef9;
+
+      box-shadow: 0 18px 30px rgba(185, 146, 91, 0.4);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+
+    .newsletter-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -40%;
+
+      background:
+
+        radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.32), transparent 60%),
+
+        radial-gradient(circle at 80% 80%, rgba(224, 193, 141, 0.4), transparent 55%);
+
+      opacity: 0.9;
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      animation: cardGlowSoft 14s ease-in-out infinite alternate;
+
+    }
+
+
+
+    .newsletter-card h3 {
+
+      font-size: 1rem;
+
+      margin-bottom: 0.4rem;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .newsletter-card p {
+
+      font-size: 0.86rem;
+
+      margin-bottom: 0.9rem;
+
+    }
+
+
+
+    .newsletter-row {
+
+      display: flex;
+
+      gap: 0.6rem;
+
+      flex-wrap: wrap;
+
+    }
+
+
+
+    .newsletter-input {
+
+      flex: 1 1 150px;
+
+      min-width: 0;
+
+      border-radius: 999px;
+
+      border: none;
+
+      padding: 0.55rem 0.9rem;
+
+      font-size: 0.86rem;
+
+      outline: none;
+
+    }
+
+
+
+    .newsletter-btn {
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(0, 0, 0, 0.08);
+
+      padding: 0.55rem 1.2rem;
+
+      font-size: 0.86rem;
+
+      cursor: pointer;
+
+      background: #fdf5eb;
+
+      color: var(--gold-accent);
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+
+        background var(--transition-fast);
+
+    }
+
+
+
+    .newsletter-btn:hover {
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+
+      background: #fff9f0;
+
+    }
+
+
+
+    /* FOOTER */
+
+    footer {
+
+      border-top: 1px solid rgba(15, 92, 116, 0.08);
+
+      padding: 1.6rem 0 1.9rem;
+
+      margin-top: 1.4rem;
+
+      font-size: 0.78rem;
+
+      color: var(--muted);
+
+    }
+
+
+
+    .footer-inner {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 0.6rem;
+
+      flex-wrap: wrap;
+
+    }
+
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 0.6rem;
+
+      flex-wrap: wrap;
+
+    }
+
+
+
+    .footer-links a {
+
+      padding: 0.12rem 0.5rem;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(15, 92, 116, 0.16);
+
+      background: rgba(255, 255, 255, 0.8);
+
+      transition: background var(--transition-fast), transform var(--transition-fast);
+
+    }
+
+
+
+    .footer-links a:hover {
+
+      background: #fff3e6;
+
+      transform: translateY(-1px);
+
+    }
+
+
+
+    /* CART DRAWER */
+
+    .cart-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.25);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: opacity var(--transition-med);
+
+      z-index: 80;
+
+    }
+
+
+
+    .cart-overlay.visible {
+
+      opacity: 1;
+
+      pointer-events: auto;
+
+    }
+
+
+
+    .cart-drawer {
+
+      position: fixed;
+
+      top: 0;
+
+      right: 0;
+
+      width: min(360px, 100%);
+
+      height: 100vh;
+
+      background: #fffaf4;
+
+      box-shadow: -18px 0 40px rgba(0, 0, 0, 0.18);
+
+      transform: translateX(100%);
+
+      transition: transform var(--transition-med);
+
+      z-index: 90;
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+
+    .cart-drawer.open {
+
+      transform: translateX(0);
+
+    }
+
+
+
+    .cart-header {
+
+      padding: 1.2rem 1.2rem 0.8rem;
+
+      border-bottom: 1px solid rgba(185, 146, 91, 0.2);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 0.6rem;
+
+    }
+
+
+
+    .cart-title {
+
+      font-size: 1rem;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    .cart-close {
+
+      border: none;
+
+      background: transparent;
+
+      font-size: 1.3rem;
+
+      cursor: pointer;
+
+      color: var(--muted-soft);
+
+      transition: transform var(--transition-fast), color var(--transition-fast);
+
+    }
+
+
+
+    .cart-close:hover {
+
+      transform: rotate(6deg);
+
+      color: #444;
+
+    }
+
+
+
+    .cart-items {
+
+      padding: 0.9rem 1.2rem;
+
+      flex: 1 1 auto;
+
+      overflow-y: auto;
+
+      font-size: 0.86rem;
+
+    }
+
+
+
+    .cart-empty {
+
+      text-align: center;
+
+      margin-top: 2.4rem;
+
+      color: var(--muted-soft);
+
+      font-size: 0.9rem;
+
+    }
+
+
+
+    .cart-item {
+
+      display: grid;
+
+      grid-template-columns: 1.7fr auto;
+
+      gap: 0.4rem 0.6rem;
+
+      padding: 0.8rem 0;
+
+      border-bottom: 1px dashed rgba(185, 146, 91, 0.24);
+
+    }
+
+
+
+    .cart-item-main {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 0.1rem;
+
+    }
+
+
+
+    .cart-item-name {
+
+      font-size: 0.9rem;
+
+    }
+
+
+
+    .cart-item-meta {
+
+      font-size: 0.78rem;
+
+      color: var(--muted-soft);
+
+    }
+
+
+
+    .cart-item-actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.3rem;
+
+      font-size: 0.78rem;
+
+    }
+
+
+
+    .qty-btn {
+
+      width: 22px;
+
+      height: 22px;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(185, 146, 91, 0.5);
+
+      background: #fff6eb;
+
+      cursor: pointer;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+    }
+
+
+
+    .qty-btn:hover {
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
+
+    }
+
+
+
+    .cart-item-remove {
+
+      border: none;
+
+      background: transparent;
+
+      color: var(--muted-soft);
+
+      cursor: pointer;
+
+      font-size: 0.76rem;
+
+      text-decoration: underline;
+
+    }
+
+
+
+    .cart-item-price {
+
+      text-align: right;
+
+      font-size: 0.86rem;
+
+    }
+
+
+
+    .cart-footer {
+
+      border-top: 1px solid rgba(185, 146, 91, 0.22);
+
+      padding: 0.9rem 1.2rem 1.1rem;
+
+      font-size: 0.9rem;
+
+    }
+
+
+
+    .cart-footer-row {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 0.6rem;
+
+    }
+
+
+
+    .cart-footer-row span:last-child {
+
+      font-weight: 600;
+
+    }
+
+
+
+    .cart-checkout-btn {
+
+      width: 100%;
+
+      border-radius: 999px;
+
+      border: none;
+
+      padding: 0.7rem 1rem;
+
+      font-size: 0.9rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.12em;
+
+      cursor: pointer;
+
+      background: var(--gold-accent);
+
+      color: #ffffff;
+
+      box-shadow: 0 16px 36px rgba(185, 146, 91, 0.5);
+
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+
+        background var(--transition-fast);
+
+    }
+
+
+
+    .cart-checkout-btn:hover {
+
+      transform: translateY(-1px);
+
+      box-shadow: 0 20px 44px rgba(185, 146, 91, 0.55);
+
+      background: #a17c4e;
+
+    }
+
+
+
+    @keyframes badgeShine {
+
+      0% { opacity: 0; transform: translateX(-20%); }
+
+      40% { opacity: 0; transform: translateX(-10%); }
+
+      55% { opacity: 0.9; transform: translateX(80%); }
+
+      70% { opacity: 0; transform: translateX(100%); }
+
+      100% { opacity: 0; transform: translateX(100%); }
+
+    }
+
+
+
+    @keyframes cardTilt {
+
+      0% { transform: translateY(0) rotate(0deg); }
+
+      30% { transform: translateY(-4px) rotate(-0.3deg); }
+
+      70% { transform: translateY(-6px) rotate(0.3deg); }
+
+      100% { transform: translateY(-6px) rotate(0deg); }
+
+    }
+
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .hero-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        text-align: center;
+
+        gap: 3rem;
+
+      }
+
+
+
+      .hero-buttons {
+
+        justify-content: center;
+
+      }
+
+
+
+      .hero-meta {
+
+        justify-content: center;
+
+      }
+
+
+
+      .parallax-stage {
+
+        height: 320px;
+
+      }
+
+
+
+      .parallax-bottle-img {
+
+        height: 210px;
+
+      }
+
+
+
+      .source-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 2rem;
+
+      }
+
+
+
+      .source-image-card::before,
+
+      .source-image-card::after {
+
+        display: none;
+
+      }
+
+
+
+      .product-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+
+
+      .why-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      }
+
+
+
+      .contact-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+
+
+      .nav-links {
+
+        position: absolute;
+
+        inset: 100% 0 auto 0;
+
+        background: rgba(245, 237, 227, 0.98);
+
+        padding: 0.8rem 1.4rem 1rem;
+
+        flex-direction: column;
+
+        transform-origin: top;
+
+        transform: scaleY(0.7);
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        border-bottom: 1px solid rgba(15, 92, 116, 0.1);
+
+      }
+
+
+
+      .nav-links.open {
+
+        opacity: 1;
+
+        pointer-events: auto;
+
+        transform: scaleY(1);
+
+      }
+
+
+
+      .nav-toggle {
+
+        display: inline-flex;
+
+      }
+
+    }
+
+
+
+    @media (max-width: 640px) {
+
+      .product-grid,
+
+      .why-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+      }
+
+
+
+      .hero {
+
+        padding-top: 5rem;
+
+      }
+
+
+
+      .parallax-stage {
+
+        height: 280px;
+
+      }
+
+
+
+      .parallax-layer--back {
+
+        display: none;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+
+    <div class="cart-header">
+
+      <div>
+
+        <div class="cart-title">Cart</div>
+
+        <small style="font-size:0.78rem; color:var(--muted-soft);">
+
+          Aurvenza – the art of luxury, bottled.
+
+        </small>
+
+      </div>
+
+      <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+
+      <div class="cart-footer-row">
+
+        <span>Subtotal</span>
+
+        <span id="cartTotal">$0.00</span>
+
+      </div>
+
+      <small style="display:block; font-size:0.78rem; color:var(--muted-soft); margin-bottom:0.7rem;">
+
+        Taxes and shipping calculated at checkout. This is a demo front-end cart –
+
+        plug in your payment provider when you're ready.
+
+      </small>
+
+      <button class="cart-checkout-btn" id="checkoutBtn">
+
+        Proceed to checkout
+
+      </button>
+
+    </div>
+
+  </aside>
+
+
+
+  <header>
+
+    <div class="container nav">
+
+      <div class="nav-left">
+
+        <div class="logo-text">
+
+          <div class="logo-text-main">AURVENZA</div>
+
+          <div class="logo-text-sub">
+
+            The art of luxury redefining elegance and exclusivity
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+
+          <span class="nav-toggle-line"></span>
+
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+          <a href="#hero">Home</a>
+
+          <a href="#bottles">Bottles</a>
+
+          <a href="#collection">Collection</a>
+
+          <a href="#why">Why Aurvenza</a>
+
+          <a href="#contact">Contact</a>
+
+        </div>
+
+      </nav>
+
+
+
+      <button class="cart-button" id="cartButton" aria-label="Open cart">
+
+        <span class="cart-dot"></span>
+
+        <span>Cart</span>
+
+        <span class="cart-count" id="cartCount">0</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+    <section id="hero" class="hero">
+
+      <div class="hero-bg" id="heroBg"></div>
+
+
+
+      <div class="hero-container-inner">
+
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+
+          <div class="tagline">AURVENZA · WATER HOUSE</div>
+
+          <h1 class="hero-title">
+
+            The <span>art of luxury</span> in every
+
+            <span>drop of water</span>.
+
+          </h1>
+
+          <p class="hero-sub">
+
+            Aurvenza is crafted for those who treat hydration as a quiet ritual of
+
+            elegance. Still, sparkling, and reserve selections designed to live on
+
+            your table, desk, or suite – not just in your fridge.
+
+          </p>
+
+
+
+          <div class="hero-buttons">
+
+            <button class="btn-primary" data-scroll="#collection">
+
+              Shop the collection
+
+            </button>
+
+            <button class="btn-ghost" data-scroll="#why">
+
+              Discover the philosophy
+
+            </button>
+
+          </div>
+
+
+
+          <div class="hero-meta">
+
+            <div class="hero-meta-item">
+
+              <span class="hero-meta-label">Signature profile</span>
+
+              <span>Low-minerality, velvety mouthfeel, refined finish.</span>
+
+            </div>
+
+            <div class="hero-meta-item">
+
+              <span class="hero-meta-label">Craft</span>
+
+              <span>Triple-stage filtration, glass-clear presentation.</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div style="min-height: 120px;"></div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="bottles" class="section-parallax">
+
+      <div class="container parallax-heading" data-aos="fade-up">
+
+        <div class="section-eyebrow">Bottle gallery</div>
+
+        <h2 class="section-title">Objects of quiet luxury</h2>
+
+        <p class="section-sub">
+
+          Each Aurvenza bottle is treated as a design piece – slender, glass-only and
+
+          created to feel at home on marble counters, in hotel suites and on studio desks.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="parallax-stage" data-aos="fade-up" data-aos-delay="120">
+
+        <div class="parallax-base"></div>
+
+
+
+        <div class="parallax-layer parallax-layer--back" data-parallax-depth="-0.05">
+
+          <img src="bg removed 1L.png" alt="Aurvenza bottle back view" class="parallax-bottle-img" />
+
+        </div>
+
+
+
+        <div class="parallax-layer parallax-layer--left" data-parallax-depth="-0.12">
+
+          <img src="3.png" alt="Aurvenza left bottle" class="parallax-bottle-img" />
+
+        </div>
+
+
+
+        <div class="parallax-layer parallax-layer--center" data-parallax-depth="-0.2">
+
+          <img src=" bg removed 1L.png" alt="Aurvenza center bottle" class="parallax-bottle-img" />
+
+        </div>
+
+
+
+        <div class="parallax-layer parallax-layer--right" data-parallax-depth="-0.14">
+
+
+          <img src="chotu removed.png" alt="Aurvenza right bottle" class="parallax-bottle-img" />
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="source" class="section-source">
+
+      <div class="container source-grid">
+
+        <div class="source-text" data-aos="fade-right" data-aos-duration="2000">
+
+          <div class="section-heading">
+
+            <div class="section-eyebrow">The Origin</div>
+
+            <h2 class="section-title">Where purity begins</h2>
+
+            <p class="section-sub">
+
+              The Aurvenza source lies hidden within a secluded alpine reserve,
+
+              naturally filtered by millennia of glacial rock. This untouched origin
+
+              is the core of our promise.
+
+            </p>
+
+          </div>
+
+          <ul class="source-list">
+
+            <li>Low TDS and neutral pH.</li>
+
+            <li>Naturally filtered by quartzite layers.</li>
+
+            <li>Protected far from industrial pollutants.</li>
+
+          </ul>
+
+          <button class="btn-ghost" data-scroll="#contact" style="margin-top: 1rem;">
+
+            View source data sheet
+
+          </button>
+
+        </div>
+
+
+
+        <div
+
+          class="source-image-card"
+
+          data-aos="zoom-in"
+
+          data-aos-duration="10000"
+
+          data-aos-delay="200"
+
+        >
+
+          <div class="source-image-inner">
+
+            <img src="landscape.jpeg" alt="Aurvenza source landscape" class="source-img" />
+
+          </div>
+
+          <div class="image-caption">
+
+            <small>The alpine reserve that inspires Aurvenza’s calm profile.</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="collection" class="section-products">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <div class="section-eyebrow">Our collection</div>
+
+          <h2 class="section-title">The Aurvenza range</h2>
+
+          <p class="section-sub">
+
+            Discover the spectrum of purity, from still to effervescent, each
+
+            bottled to enhance your environment and palate.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="product-grid">
+
+          <a href="#" class="product-card" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="product-badge-row">
+
+              <div class="product-badge">Still</div>
+
+              <small>250 ml</small>
+
+            </div>
+
+            <div class="hero-bottle" style="height: 150px;">
+
+              <img src="medium.png" alt="Aurvenza Still bottle" class="hero-bottle-img" />
+
+            </div>
+
+            <div class="product-title">Aurvenza 250ML </div>
+
+            <p class="product-desc">
+
+
+
+
+
+            </p>
+
+            <div class="product-meta"></div>
+
+            <div class="product-price-row">
+
+              <span class="product-price">Rs5.00 <span>/ bottle</span></span>
+
+              <div class="product-cta">
+
+                <div class="pill-soft">In Stock</div>
+
+                <button class="btn-add" data-id="1">
+
+                  + Add
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </a>
+
+
+
+          <a href="#" class="product-card" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="product-badge-row">
+
+              <div class="product-badge">Sparkling</div>
+
+              <small>750 ml</small>
+
+            </div>
+
+            <div class="hero-bottle" style="height: 140px;">
+
+              <img src="1L.png" alt="Aurvenza Effervescence bottle" class="hero-bottle-img" />
+
+            </div>
+
+            <div class="product-title">Aurvenza 750ML</div>
+
+            <p class="product-desc">
+
+
+            </p>
+
+
+
+            <div class="product-price-row">
+
+              <span class="product-price">Rs15.00 <span>/ bottle</span></span>
+
+              <div class="product-cta">
+
+                <div class="pill-soft">In Stock</div>
+
+                <button class="btn-add" data-id="2">
+
+                  + Add
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </a>
+
+
+
+          <a href="#" class="product-card" data-aos="fade-up" data-aos-delay="500">
+
+            <div class="product-badge-row">
+
+              <div class="product-badge" style="background: #eef7fb; border-color: #0f5c74; color: #0f5c74;">Reserve</div>
+
+              <small>Limited Ed.</small>
+
+            </div>
+
+            <div class="hero-bottle" style="height: 140px;">
+
+              <img src="1LL.png" alt="Aurvenza Aged Reserve bottle" class="hero-bottle-img" />
+
+            </div>
+
+            <div class="product-title">Aurvenza 1L</div>
+
+            <p class="product-desc">
+
+
+            </p>
+
+
+
+            <div class="product-price-row">
+
+              <span class="product-price">Rs20.00 <span>/ bottle</span></span>
+
+              <div class="product-cta">
+
+                <div class="pill-soft" style="background: #fcf1f3; color: #b00f28;">Low Stock</div>
+
+                <button class="btn-add" data-id="3">
+
+                  + Add
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="why">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <div class="section-eyebrow">Our Philosophy</div>
+
+          <h2 class="section-title">Why Aurvenza?</h2>
+
+          <p class="section-sub">
+
+            We don't just bottle water; we curate an experience that transcends the
+
+            ordinary daily necessity.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+          <div class="why-card" data-aos="zoom-in-up" data-aos-delay="100">
+
+            <div class="why-title">🔬 Triple filtration purity</div>
+
+            Water is filtered three times through natural sediment layers, ensuring
+
+            zero impurities and a crystal-clear appearance.
+
+          </div>
+
+          <div class="why-card" data-aos="zoom-in-up" data-aos-delay="200">
+
+            <div class="why-title">💧 Perfect minerality balance</div>
+
+            Our proprietary process achieves a balanced TDS count,
+
+            enhancing flavor without overpowering the palate.
+
+          </div>
+
+          <div class="why-card" data-aos="zoom-in-up" data-aos-delay="300">
+
+            <div class="why-title">💎 Glass-only design</div>
+
+            Every bottle is a centerpiece. Reusable, recyclable, and designed to
+
+            eliminate flavor leeching from plastics.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-grid" data-aos="fade-up">
+
+          <div class="contact-card">
+
+            <div class="section-heading" data-aos="fade-up" data-aos-duration="600">
+
+              <div class="section-eyebrow">Get in touch</div>
+
+              <h2 class="section-title">Visit or inquire</h2>
+
+            </div>
+
+
+
+            <div class="contact-row">
+
+              <div class="contact-item">
+
+                <span class="contact-label">Boutique</span>
+
+                <span class="contact-value">Level 54, Almas Tower JLT,DMCC Free Zone,Dubai,UAE</span>
+
+              </div>
+
+              <div class="contact-item">
+
+                <span class="contact-label">Reservations</span>
+
+                <span class="contact-value">+971 4555 1234</span>
+
+              </div>
+
+              <div class="contact-item">
+
+                <span class="contact-label">Email</span>
+
+                <span class="contact-value">inquire@aurvenza.com</span>
+
+              </div>
+
+              <div class="contact-item">
+
+                <span class="contact-label">Wholesale</span>
+
+                <span class="contact-value">partners@aurvenza.com</span>
+
+              </div>
+
+            </div>
+
+            <div class="contact-note">
+
+              Our UAE boutique is open Monday to Friday, 10 am – 6 pm.
+
+            </div>
+
+          </div>
+
+
+
+          <div class="newsletter-card">
+
+            <h3>Subscribe to the Reserve</h3>
+
+            <p>
+
+              Receive exclusive access to limited-edition seasonal offerings and
+
+              tasting notes.
+
+            </p>
+
+            <div class="newsletter-row">
+
+              <input type="email" placeholder="Email address" class="newsletter-input" />
+
+              <button class="newsletter-btn">Subscribe</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>&copy; 2025 Aurvenza Water House. All rights reserved.</div>
+
+      <div class="footer-links">
+
+        <a href="#hero">Back to top</a>
+
+        <a href="#">Privacy Policy</a>
+
+        <a href="#">Terms of Service</a>
+
+        <a href="#">Shipping</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+  <script>
+
+    // --- AOS INITIALIZATION ---
+
+    AOS.init({
+
+      duration: 1000,
+
+      once: true,
+
+      offset: 150,
+
+      delay: 50,
+
+    });
+
+
+
+    // Smooth scroll for links + buttons with data-scroll
+
+    document.querySelectorAll('a[href^="#"], button[data-scroll]').forEach(anchor => {
+
+      anchor.addEventListener('click', function (e) {
+
+        const href = this.getAttribute('href');
+
+        const targetId = this.getAttribute('data-scroll') || href;
+
+        if (!targetId || !targetId.startsWith('#')) return;
+
+        e.preventDefault();
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+
+        }
+
+      });
+
+    });
+
+
+
+    // --- PARALLAX BACKGROUND SCRIPT ---
+
+    // This creates the "moving along" effect for the jungle background
+
+    const heroBg = document.getElementById('heroBg');
+
+
+
+    window.addEventListener('scroll', () => {
+
+      let scrollPos = window.scrollY;
+
+      // Move background slower than scroll speed to create depth
+
+      if(heroBg) {
+
+        heroBg.style.transform = `translateY(${scrollPos * 0.4}px)`;
+
+      }
+
+    });
+
+
+
+    // --- SIMPLE PARALLAX FOR BOTTLES (Section 2) ---
+
+    const parallaxLayers = document.querySelectorAll('[data-parallax-depth]');
+
+    const parallaxSection = document.querySelector('.section-parallax');
+
+
+
+    function handleParallax() {
+
+      if (!parallaxSection) return;
+
+      const rect = parallaxSection.getBoundingClientRect();
+
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+
+
+      // only animate when section is in view
+
+      if (rect.bottom < 0 || rect.top > viewportHeight) return;
+
+
+
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      const sectionTop = scrollTop + rect.top;
+
+
+
+      parallaxLayers.forEach(layer => {
+
+        const depth = parseFloat(layer.dataset.parallaxDepth) || 0;
+
+        const relativeY = scrollTop - sectionTop;
+
+        layer.style.transform = `translate3d(0, ${relativeY * depth}px, 0)`;
+
+      });
+
+    }
+
+
+
+    window.addEventListener('scroll', handleParallax);
+
+    window.addEventListener('load', handleParallax);
+
+    window.addEventListener('resize', handleParallax);
+
+
+
+    // --- CART LOGIC (your simplified demo) ---
+
+    const cartButton = document.getElementById('cartButton');
+
+    const cartClose = document.getElementById('cartClose');
+
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    const cartDrawer = document.getElementById('cartDrawer');
+
+    const cartItemsDiv = document.getElementById('cartItems');
+
+    const cartCountSpan = document.getElementById('cartCount');
+
+    const cartTotalSpan = document.getElementById('cartTotal');
+
+    const productAddButtons = document.querySelectorAll('.btn-add');
+
+
+
+    let cart = [];
+
+
+
+    function updateCartDisplay() {
+
+      cartItemsDiv.innerHTML = '';
+
+      let total = 0;
+
+
+
+      if (cart.length === 0) {
+
+        cartItemsDiv.innerHTML = '<div class="cart-empty">Your cart is currently empty.</div>';
+
+      } else {
+
+        cart.forEach(item => {
+
+          const itemPrice = Number(item.price.replace(/[^\d.]/g, ''));
+
+
+          const subtotal = itemPrice * item.quantity;
+
+          total += subtotal;
+
+
+
+          const itemHtml = `
+
+            <div class="cart-item">
+
+              <div class="cart-item-main">
+
+                <span class="cart-item-name">${item.name}</span>
+
+                <span class="cart-item-meta">
+
+                  Size: ${item.size}
+
+                  <button class="cart-item-remove" data-id="${item.id}">Remove</button>
+
+                </span>
+
+              </div>
+
+              <div class="cart-item-price">Rs${subtotal.toFixed(2)}</div>
+
+
+              <div class="cart-item-actions">
+
+                <button class="qty-btn" data-action="decrease" data-id="Rs{item.id}">-</button>
+
+                <span class="cart-item-qty">${item.quantity}</span>
+
+                <button class="qty-btn" data-action="increase" data-id="Rs{item.id}">+</button>
+
+              </div>
+
+            </div>
+
+          `;
+
+          cartItemsDiv.innerHTML += itemHtml;
+
+        });
+
+      }
+
+
+
+      cartCountSpan.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      cartTotalSpan.textContent = `Rs${total.toFixed(2)}`;
+
+    }
+
+
+
+    function toggleCart(open) {
+
+      if (open) {
+
+        cartOverlay.classList.add('visible');
+
+        cartDrawer.classList.add('open');
+
+        document.body.style.overflow = 'hidden';
+
+      } else {
+
+        cartOverlay.classList.remove('visible');
+
+        cartDrawer.classList.remove('open');
+
+        document.body.style.overflow = '';
+
+      }
+
+    }
+
+
+
+    productAddButtons.forEach(button => {
+
+      button.addEventListener('click', (e) => {
+
+        e.preventDefault();
+
+        const id = button.dataset.id;
+
+        let name, price, size;
+
+
+
+        if (id === '1') {
+
+          name = 'Aurvenza 250ml';
+
+          price = 'Rs5.00';
+
+          size = '250 ml';
+
+        } else if (id === '2') {
+
+          name = 'Aurvenza 750ml';
+
+          price = 'Rs15.00';
+
+          size = '750 ml';
+
+        } else if (id === '3') {
+
+          name = 'Aurvenza 1L';
+
+          price = 'Rs20.00';
+
+          size = 'Limited Ed.';
+
+        }
+
+
+
+        const existingItem = cart.find(item => item.id === id);
+
+        if (existingItem) {
+
+          existingItem.quantity++;
+
+        } else {
+
+          cart.push({ id, name, price, size, quantity: 1 });
+
+        }
+
+        updateCartDisplay();
+
+        toggleCart(true);
+
+      });
+
+    });
+
+
+
+    cartItemsDiv.addEventListener('click', (e) => {
+
+      const target = e.target;
+
+      const id = target.dataset.id;
+
+      const action = target.dataset.action;
+
+
+
+      if (action === 'increase' || action === 'decrease') {
+
+        const item = cart.find(i => i.id === id);
+
+        if (item) {
+
+          if (action === 'increase') {
+
+            item.quantity++;
+
+          } else if (action === 'decrease' && item.quantity > 1) {
+
+            item.quantity--;
+
+          } else if (action === 'decrease' && item.quantity === 1) {
+
+            cart = cart.filter(i => i.id !== id);
+
+          }
+
+        }
+
+      } else if (target.classList.contains('cart-item-remove')) {
+
+        cart = cart.filter(i => i.id !== id);
+
+      }
+
+      updateCartDisplay();
+
+    });
+
+
+
+    cartButton.addEventListener('click', () => toggleCart(true));
+
+    cartClose.addEventListener('click', () => toggleCart(false));
+
+    cartOverlay.addEventListener('click', () => toggleCart(false));
+
+
+
+    // Nav toggle for mobile
+
+    const navToggle = document.getElementById('navToggle');
+
+    const navLinks = document.getElementById('navLinks');
+
+
+
+    navToggle.addEventListener('click', () => {
+
+      navToggle.classList.toggle('active');
+
+      navLinks.classList.toggle('open');
+
+    });
+
+
+
+    navLinks.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        navToggle.classList.remove('active');
+
+        navLinks.classList.remove('open');
+
+      });
+
+    });
+
+
+
+    // initial cart render
+
+    updateCartDisplay();
+
+  </script>
+
+</body>
+
+</html>
